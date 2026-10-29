@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>NexusShop — Modern E‑Commerce</title>
+    <title>NexusShop | Discover your next favourite</title>
 
     <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
@@ -1264,10 +1264,191 @@
             *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
         }
 
+
+
+        /* ===== NEXUSSHOP REDESIGN: clearer hierarchy, calmer colors, easier browsing ===== */
+        :root {
+            --bg: #f6f8fc;
+            --bg-card: #ffffff;
+            --primary: #17243b;
+            --primary-light: #263a59;
+            --accent: #4f46e5;
+            --accent-light: #e8eaff;
+            --accent-dark: #3730a3;
+            --muted: #64748b;
+            --muted-light: #94a3b8;
+            --surface: #f1f4fa;
+            --success: #0f9f82;
+            --warning: #f5b942;
+            --radius: 20px;
+            --radius-sm: 12px;
+            --shadow: 0 8px 28px rgba(25, 42, 70, .06);
+            --shadow-hover: 0 18px 44px rgba(25, 42, 70, .12);
+            --container: 1200px;
+        }
+        body { background: var(--bg); color: var(--primary); }
+        a, button, input { -webkit-tap-highlight-color: transparent; }
+        button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid rgba(79,70,229,.35); outline-offset: 3px; }
+        .announcement-bar { background: #17243b; color: #e9edff; font-size: 12px; letter-spacing: .15px; }
+        .announcement-inner { display:flex; justify-content:space-between; align-items:center; gap:14px; min-height:34px; }
+        .announcement-inner i { color:#a5b4fc; margin-right:7px; }
+        .announcement-right { color:#cbd5e1; }
+        header { background:rgba(255,255,255,.96); border-bottom:1px solid #e8edf5; box-shadow:0 4px 18px rgba(25,42,70,.025); }
+        .header-inner { min-height:76px; padding:14px 0; gap:22px; }
+        .brand { font-size:24px; letter-spacing:-1px; color:#17243b; }
+        .brand i, .brand .accent { color:var(--accent); }
+        nav.main-nav ul { gap:3px; }
+        nav.main-nav li a { padding:10px 12px; border-radius:10px; font-size:13px; color:#526079; }
+        nav.main-nav li a:hover, nav.main-nav li a.active { color:var(--accent); background:#f0f1ff; }
+        .search-wrap { min-width:210px; border:1px solid #e3e8f2; background:#f7f8fc; border-radius:12px; padding:0 13px; }
+        .search-wrap:focus-within { border-color:#818cf8; background:#fff; box-shadow:0 0 0 4px rgba(79,70,229,.09); }
+        .search-wrap input { padding:12px 0; font-size:13px; }
+        .search-wrap button:hover { color:var(--accent); }
+        .header-actions { gap:2px; }
+        .header-actions .icon-btn { width:40px; height:40px; border-radius:12px; color:#526079; font-size:16px; }
+        .header-actions .icon-btn:hover { background:#f0f1ff; color:var(--accent); }
+        .cart-count { background:var(--accent); border:2px solid #fff; }
+        .mobile-toggle { border-radius:12px; background:#f0f1ff; color:var(--accent); }
+        #mobileMenu { border-top:1px solid #e8edf5; }
+        #mobileMenu ul li a:hover { background:#f0f1ff; color:var(--accent); }
+        #mobileMenu ul li a:hover i { color:var(--accent); }
+        .hero { min-height:430px; margin:24px auto 0; max-width:calc(var(--container) + 48px); border-radius:26px; background:linear-gradient(112deg,#17243b 0%,#283a65 55%,#5148c8 100%); box-shadow:0 18px 45px rgba(39,51,105,.14); }
+        .hero::before { background-image:linear-gradient(90deg,rgba(18,30,53,.90) 0%,rgba(29,43,80,.74) 48%,rgba(67,56,202,.20) 100%),url('https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?auto=format&fit=crop&w=1600&q=85'); background-position:center,right center; background-size:cover; opacity:1; }
+        .hero .container { width:100%; padding:24px 54px; }
+        .hero .badge { background:rgba(199,210,254,.15); color:#c7d2fe; border:1px solid rgba(224,231,255,.22); padding:8px 14px; margin-bottom:22px; }
+        .hero h1 { font-family:'Inter',system-ui,sans-serif; font-size:clamp(38px,5vw,60px); letter-spacing:-2.2px; line-height:1.06; max-width:620px; margin-bottom:18px; }
+        .hero p { color:#e0e7ff; font-size:16px; max-width:470px; line-height:1.75; margin-bottom:30px; }
+        .btn { border-radius:12px; padding:13px 21px; font-size:14px; }
+        .btn-primary { background:#6366f1; border-color:#6366f1; box-shadow:0 8px 20px rgba(79,70,229,.2); }
+        .btn-primary:hover { background:#4f46e5; border-color:#4f46e5; }
+        .btn-secondary { background:#17243b; border-color:#17243b; }
+        .btn-outline { border-color:#d9e0ec; background:#fff; }
+        .btn-outline:hover { background:#17243b; }
+        .btn-ghost { background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.4); }
+        .benefits-strip { padding:25px 0 8px; }
+        .benefits-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; }
+        .benefit-item { display:flex; align-items:center; gap:12px; padding:16px 18px; background:#fff; border:1px solid #e9edf5; border-radius:15px; }
+        .benefit-icon { flex:0 0 42px; width:42px; height:42px; display:grid; place-items:center; border-radius:13px; background:#eef0ff; color:var(--accent); font-size:17px; }
+        .benefit-item strong { display:block; font-size:13px; font-weight:700; }
+        .benefit-item small { display:block; color:var(--muted); font-size:11px; margin-top:3px; }
+        .section { padding:54px 0 28px; }
+        .section-header { margin-bottom:25px; align-items:center; }
+        .section-header .title-group h2 { font-size:clamp(23px,3vw,30px); letter-spacing:-.9px; }
+        .section-header .title-group p { font-size:14px; color:#748198; margin-top:6px; }
+        .section-header .view-all { color:var(--accent); padding:10px 0; }
+        .section-header .view-all:hover { color:var(--accent-dark); }
+        .categories-grid { grid-template-columns:repeat(6,minmax(0,1fr)); gap:14px; }
+        .cat-card { padding:23px 12px 20px; border:1px solid #e8edf5; border-radius:17px; box-shadow:0 5px 18px rgba(25,42,70,.035); }
+        .cat-card:hover { border-color:#c7d2fe; transform:translateY(-4px); }
+        .cat-card .icon-wrap { background:#eef0ff; color:var(--accent); border-radius:16px; width:54px; height:54px; font-size:21px; }
+        .cat-card:hover .icon-wrap { background:var(--accent); color:#fff; }
+        .cat-card h4 { font-size:13px; }
+        .cat-card .count { font-size:12px; }
+        .products-grid { grid-template-columns:repeat(4,minmax(0,1fr)); gap:18px; }
+        .product-card { border:1px solid #e7ecf4; border-radius:18px; box-shadow:0 6px 22px rgba(25,42,70,.045); }
+        .product-card:hover { transform:translateY(-5px); border-color:#d6dcfb; box-shadow:var(--shadow-hover); }
+        .product-card .img-wrap { background:#f5f7fb; }
+        .product-card .img-wrap img { transition:transform .4s ease; }
+        .product-card:hover .img-wrap img { transform:scale(1.045); }
+        .product-card .badge { border-radius:8px; padding:6px 9px; font-size:10px; font-weight:800; letter-spacing:.3px; }
+        .product-card .badge.sale { background:#fff0e9; color:#c2410c; }
+        .wish-btn { background:#fff; box-shadow:0 3px 12px rgba(15,23,42,.08); border-radius:12px; width:36px; height:36px; }
+        .wish-btn:hover { color:#e11d48; background:#fff1f2; }
+        .product-card .body { padding:16px 17px 10px; }
+        .category-tag { color:#6366f1; font-size:10px; font-weight:800; letter-spacing:.7px; text-transform:uppercase; }
+        .product-card h5 { font-size:15px; letter-spacing:-.25px; margin:7px 0 10px; }
+        .price-row .price { font-size:18px; color:#17243b; }
+        .old-price { color:#94a3b8; }
+        .rating { color:#f59e0b; font-size:12px; margin-top:8px; }
+        .rating span { color:#8792a5; }
+        .product-card .footer { padding:0 17px 17px; }
+        .add-btn { border-radius:11px; padding:11px 14px; background:#eef0ff; color:#4338ca; font-weight:700; font-size:13px; }
+        .add-btn:hover { background:var(--accent); color:#fff; }
+        .add-btn.added { background:#d1fae5; color:#047857; }
+        .deal-wrap { border:1px solid #e4e9f4; border-radius:24px; overflow:hidden; box-shadow:var(--shadow); background:#fff; }
+        .deal-content { padding:34px 38px; }
+        .deal-content .tag { background:#fff1e9; color:#c2410c; border-radius:8px; padding:7px 10px; }
+        .deal-content h3 { letter-spacing:-1px; font-size:28px; }
+        .deal-content .desc { color:#66758c; line-height:1.75; }
+        .deal-content .price-big { color:#17243b; }
+        .deal-content .stock { color:#64748b; }
+        .timer-box { border:1px solid #e6e9f5; background:#f7f8ff; border-radius:12px; }
+        .timer-box .num { color:#4338ca; }
+        .testimonials-scroll { gap:16px; }
+        .testimonial-card { border:1px solid #e7ecf4; border-radius:18px; box-shadow:0 5px 18px rgba(25,42,70,.035); }
+        .testimonial-card blockquote { color:#4b5870; line-height:1.75; }
+        .testimonial-card .stars { color:#f59e0b; }
+        .newsletter-wrap { background:linear-gradient(115deg,#202e52,#4338a8); border-radius:24px; padding:34px 38px; box-shadow:0 16px 35px rgba(44,49,123,.14); }
+        .newsletter-wrap .text h3 { font-size:25px; letter-spacing:-.7px; }
+        .newsletter-wrap .text p { color:#dbe3ff; }
+        .newsletter-wrap form input { border-radius:12px; }
+        .newsletter-wrap form .btn { border-radius:12px; background:#818cf8; color:#fff; }
+        footer { background:#111c31; margin-top:35px; }
+        footer .brand { color:#fff; }
+        footer .brand-col p, footer .col ul li a { color:#aebbd0; }
+        footer .col h5 { color:#f1f5f9; }
+        footer .socials a { border-radius:11px; }
+        footer .footer-bottom { border-top-color:rgba(226,232,240,.13); color:#8f9eb5; }
+        #newsletterMsg { width:100%; }
+        @media (max-width: 1050px) {
+            .header-inner { gap:12px; }
+            nav.main-nav li a { padding:9px 8px; }
+            .search-wrap { min-width:175px; }
+            .benefits-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+            .categories-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+        }
+        @media (max-width: 768px) {
+            .announcement-right { display:none; }
+            .announcement-inner { justify-content:center; }
+            .header-inner { min-height:66px; }
+            .hero { margin:16px 14px 0; min-height:390px; border-radius:20px; }
+            .hero .container { padding:28px 24px; }
+            .hero h1 { font-size:clamp(35px,9vw,48px); letter-spacing:-1.5px; }
+            .hero p { font-size:14px; }
+            .benefits-strip { padding-top:16px; }
+            .benefits-grid { gap:9px; }
+            .benefit-item { padding:12px 10px; gap:9px; }
+            .benefit-icon { width:36px; height:36px; flex-basis:36px; font-size:15px; }
+            .benefit-item strong { font-size:12px; }
+            .benefit-item small { font-size:10px; }
+            .section { padding:40px 0 20px; }
+            .products-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+            .product-card .body { padding:13px 12px 8px; }
+            .product-card .footer { padding:0 12px 13px; }
+            .product-card h5 { font-size:13px; }
+            .price-row .price { font-size:16px; }
+            .deal-content { padding:25px 22px; }
+            .newsletter-wrap { padding:26px 20px; }
+        }
+        @media (max-width: 420px) {
+            .container { padding-left:16px; padding-right:16px; }
+            .brand { font-size:20px; }
+            .header-actions .icon-btn { width:34px; height:38px; }
+            .search-wrap { min-width:0; width:145px; padding:0 10px; }
+            .search-wrap input { font-size:12px; }
+            .benefits-grid { grid-template-columns:1fr 1fr; }
+            .benefit-item { align-items:flex-start; flex-direction:column; }
+            .categories-grid { gap:9px; }
+            .cat-card { padding:16px 7px; }
+            .cat-card .icon-wrap { width:44px; height:44px; font-size:18px; margin-bottom:8px; }
+            .cat-card h4 { font-size:11px; }
+            .cat-card .count { font-size:10px; }
+            .hero .actions { gap:9px; }
+            .hero .actions .btn { padding:12px 15px; font-size:12px; }
+        }
+
     </style>
 </head>
 
 <body>
+
+    <!-- ===== ANNOUNCEMENT BAR ===== -->
+    <div class="announcement-bar">
+        <div class="container announcement-inner">
+            <span><i class="fas fa-truck-fast"></i> Free shipping on orders over $50</span>
+            <span class="announcement-right">Thoughtful finds. Better everyday.</span>
+        </div>
+    </div>
 
     <!-- ===== HEADER ===== -->
     <header>
@@ -1333,13 +1514,23 @@
         <!-- HERO -->
         <section class="hero" aria-label="Hero banner">
             <div class="container">
-                <div class="badge"><i class="fas fa-sparkles"></i> New Collection 2026</div>
-                <h1>Discover Premium <br>Essentials</h1>
-                <p>Curated fashion, tech & accessories with free shipping on your first order. Limited-time deals await.</p>
+                <div class="badge"><i class="fas fa-sparkles"></i> Good finds, all in one place</div>
+                <h1>Find your next <br>everyday favourite</h1>
+                <p>Useful tech, everyday essentials, and little upgrades you’ll love — all in one place.</p>
                 <div class="actions">
                     <button class="btn btn-primary" id="shopNow"><i class="fas fa-arrow-right"></i> Shop Now</button>
                     <button class="btn btn-ghost" id="exploreDeals"><i class="fas fa-clock"></i> Explore Deals</button>
                 </div>
+            </div>
+        </section>
+
+        <!-- SHOPPING BENEFITS -->
+        <section class="benefits-strip" aria-label="Shopping benefits">
+            <div class="container benefits-grid">
+                <div class="benefit-item"><span class="benefit-icon"><i class="fas fa-truck-fast"></i></span><div><strong>Free shipping</strong><small>On orders over $50</small></div></div>
+                <div class="benefit-item"><span class="benefit-icon"><i class="fas fa-rotate-left"></i></span><div><strong>Easy returns</strong><small>30-day return window</small></div></div>
+                <div class="benefit-item"><span class="benefit-icon"><i class="fas fa-shield-halved"></i></span><div><strong>Secure checkout</strong><small>Your data stays protected</small></div></div>
+                <div class="benefit-item"><span class="benefit-icon"><i class="fas fa-headset"></i></span><div><strong>Here to help</strong><small>Friendly customer support</small></div></div>
             </div>
         </section>
 
